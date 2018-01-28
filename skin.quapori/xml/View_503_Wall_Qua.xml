@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_503_Wall_Qua">
+		<control type="group">
+			<include>OpenClose_Right</include>
+			<left>50</left>
+			<top>0</top>
+			<visible>Control.IsVisible(503)</visible>
+			<include>Visible_Right</include>
+			<control type="panel" id="503">
+				<left>0</left>
+				<top>0</top>
+				<width>98%</width>
+				<height>100%</height>
+				<onleft>9000</onleft>
+				<onright>6000</onright>
+				<onup condition="Integer.IsGreater(Container.NumPages,1)">503</onup>
+				<onup condition="!Integer.IsGreater(Container.NumPages,1)">9000</onup>
+				<ondown>503</ondown>
+				<viewtype label="31200">icon</viewtype>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>531</pagecontrol>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos) | Container.Content(addons) | Container.Content(images) | Container.Content(videos)</visible>
+				<!-- Ab hier ist die Filme ansicht -->
+                <itemlayout height="445" width="300" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
+					<control type="group">
+						<top>120</top>
+						<include>InfoWallMovieLayoutQua</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="445" width="300" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="160,300">Focus</animation>
+						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="160,300">UnFocus</animation>
+						<top>120</top>
+						<include content="InfoWallMovieLayoutQua">
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+                <!-- Bis hier ist die Filme ansicht -->
+                <!-- Ab hier ist die Serien ansicht -->
+				<itemlayout height="300" width="300" condition="Container.Content(episodes) | Container.Content(videos) | Container.Content(musicvideos)">
+					<control type="group">
+						<top>110</top>
+						<include content="InfoWallEpisodeLayout">
+							<param name="label" value="$INFO[ListItem.Label]" />
+							<param name="thumb_label" value="$INFO[ListItem.Label2]" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="300" width="300" condition="Container.Content(episodes) | Container.Content(videos) | Container.Content(musicvideos)">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="160,280">Focus</animation>
+						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="160,280">UnFocus</animation>
+						<top>110</top>
+						<include content="InfoWallEpisodeLayout">
+							<param name="focused" value="true" />
+							<param name="thumb_label" value="$INFO[ListItem.Label2]" />
+						</include>
+					</control>
+				</focusedlayout>
+                <!-- Bis hier ist die Serien ansicht -->
+                <!-- Ab hier ist die Bilder ansicht -->               
+				<itemlayout height="425" width="442" condition="Container.Content(images)">
+					<control type="group">
+						<left>40</left>
+						<top>150</top>
+						<include>InfoWallPictureLayout</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="425" width="442" condition="Container.Content(images)">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="220,330">Focus</animation>
+						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="220,330">UnFocus</animation>
+						<left>40</left>
+						<top>150</top>
+						<include content="InfoWallPictureLayout">
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+                <!-- Bis hier ist die Bilder ansicht -->
+                <!-- Ab hier ist die Musik ansicht --> 
+				<itemlayout height="400" width="300" condition="Container.Content(artists) | Container.Content(albums)">
+					<control type="group">
+						<top>150</top>
+						<include content="InfoWallMusicLayout">
+							<param name="fallback_image" value="DefaultMusicSongs.png" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="400" width="300" condition="Container.Content(artists) | Container.Content(albums)">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<top>150</top>
+						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="160,350">Focus</animation>
+						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="160,350">UnFocus</animation>
+						<include content="InfoWallMusicLayout">
+							<param name="fallback_image" value="DefaultMusicSongs.png" />
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+				<itemlayout height="390" width="300" condition="Container.Content(addons)">
+					<control type="group">
+						<top>150</top>
+						<include content="InfoWallMusicLayout">
+							<param name="fallback_image" value="DefaultAddon.png" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="390" width="300" condition="Container.Content(addons)">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<top>150</top>
+						<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="150,350">Focus</animation>
+						<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="150,350">UnFocus</animation>
+						<include content="InfoWallMusicLayout">
+							<param name="fallback_image" value="DefaultAddon.png" />
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+                <!-- Bis hier ist die Musik ansicht --> 
+			</control>
+			<!--### Ab hier begint der Alphabet Jumper ###-->
+				<control type="panel" id="6000">
+					<top>70</top>
+					<width>40</width>
+					<right>0</right>
+					<height>100%</height>
+					<onright>531</onright>
+					<onleft>531</onleft>
+					<orientation>vertical</orientation>
+					<itemlayout height="35" width="34">
+						<control type="label">
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>white</textcolor>
+							<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+						</control>
+						<control type="label">
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FFCC7B19</textcolor>
+							<visible>StringCompare(ListItem.Label,Container.ListItem.SortLetter)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="35" width="34">
+						<control type="label">
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>FFCC7B19</textcolor>
+							<animation effect="fade" start="100" end="20" time="0" condition="!IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+						</control>
+					</focusedlayout>
+					<content>plugin://script.skin.helper.service/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
+				</control>
+			<!--### Bis hier geht der Alphabet Jumper ###-->
+		</control>
+	</include>
+</includes>
