@@ -33,7 +33,7 @@
 		<extension point="xbmc.addon.repository" name="Quapori repository">
 			<info compressed="false">https://cornadius.github.io/repo.quapori/repo/addons.xml</info>
 			<checksum>https://cornadius.github.io/repo.quapori/repo/addons.xml.md5</checksum>
-			<datadir zip="true"></datadir>
+			<datadir zip="true">https://github.com/Cornadius/repo.quapori/tree/master/repo/</datadir>
 		</extension>
 		  <extension point="xbmc.addon.metadata">
 			<summary lang="en">Quapori Repository</summary>
