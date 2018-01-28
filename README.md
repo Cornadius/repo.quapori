@@ -1,2 +1,2 @@
 # skin.quapori
-Quapori Skin for Kodi/Emby
+Quapori Repo for Kodi/Emby
