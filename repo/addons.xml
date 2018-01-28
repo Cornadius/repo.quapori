@@ -20,7 +20,7 @@
 			<platform>all</platform>
 			<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 			<forum></forum>
-			<source></source>
+			<source>https://cornadius.github.io/repo.quapori/</source>
 			<assets>
 				<icon>resources/icon.png</icon>
 				<fanart>resources/fanart.jpg</fanart>
@@ -41,7 +41,7 @@
 			<description lang="de_DE">Quapori ist ein Skin für Kodi 17.0 und höher.</description>
 			<platform>all</platform>
 			<forum></forum>
-			<website>https://streamhelp.org/</website>
+			<website>https://cornadius.github.io/repo.quapori/</website>
 		  <assets>
 			<icon>icon.png</icon>
 		  </assets>
